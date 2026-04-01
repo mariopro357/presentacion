@@ -1,0 +1,88 @@
+/* ============================================================
+   HABLA PANA! 🇻🇪 — PORTAL DE PRESENTACIÓN v2.0 (style.css)
+   Mobile First & Luminous Design
+   ============================================================ */
+
+:root {
+    --h-yellow: #ffcc00;
+    --h-dark:   #050810;
+    --h-blue:   #0033a0;
+    --h-red:    #ce1126;
+}
+
+html { scroll-behavior: smooth; }
+
+body { 
+    background-color: var(--h-dark);
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+}
+
+.font-bebas { font-family: 'Bebas Neue', cursive; }
+.font-napkin { font-family: 'Dancing Script', cursive; }
+
+/* 💎 GLASS CARD v2.0 */
+.glass-card {
+    background: rgba(255, 255, 255, 0.02);
+    backdrop-filter: blur(40px);
+    -webkit-backdrop-filter: blur(40px);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    box-shadow: 0 20px 80px rgba(0,0,0,0.8);
+    transition: all 0.3s ease;
+}
+.glass-card:hover { border-color: rgba(255, 255, 255, 0.15); transform: translateY(-10px); }
+
+/* ✨ ANIMATIONS */
+@keyframes float {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-20px) rotate(5deg); }
+}
+@keyframes float-delay {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-30px) rotate(-10deg); }
+}
+@keyframes float-slow {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-15px) rotate(15deg); }
+}
+
+.animate-float { animation: float 5s ease-in-out infinite; }
+.animate-float-delay { animation: float-delay 7s ease-in-out infinite; }
+.animate-float-slow { animation: float-slow 9s ease-in-out infinite; }
+
+@keyframes slide-in {
+    0% { transform: translateY(50px); opacity: 0; }
+    100% { transform: translateY(0); opacity: 1; }
+}
+.animate-slide-in { animation: slide-in 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards; }
+
+/* 🏮 GLOW EFFECTS */
+.shadow-glow { box-shadow: 0 0 60px rgba(254, 204, 0, 0.1); }
+
+.bg-glow-center {
+    background: radial-gradient(circle at center, rgba(0, 51, 160, 0.05), transparent 70%);
+}
+
+.bg-glow::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 70% 30%, rgba(206, 17, 38, 0.05), transparent 60%);
+    pointer-events: none;
+}
+
+/* 📥 SCROLLBAR */
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.1); border-radius: 10px; }
+
+/* 📱 MOBILE RESPONSIVE PRECISIÓN */
+@media (max-width: 768px) {
+    h1 { font-size: 5rem !important; }
+    p { font-size: 0.9rem !important; }
+    .glass-card { padding: 1.5rem !important; border-radius: 2.5rem !important; }
+}
+
+::selection {
+    background: var(--h-yellow);
+    color: black;
+}
