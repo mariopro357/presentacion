@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mano - Presentación</title>
+    <link rel="stylesheet" href="diseño/landing.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Ambient glowing orbs -->
+    <div class="ambient-orbs">
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+        <div class="orb orb-3"></div>
+    </div>
+
+    <!-- Animación de fondo: Burbujas flotantes de cristal -->
+    <div class="bubbles">
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+    </div>
+
+    <!-- Texto HOLA en movimiento en el fondo -->
+    <div class="marquee-container">
+        <div class="marquee">
+            HOLA HOLA HOLA HOLA HOLA HOLA HOLA HOLA HOLA HOLA HOLA HOLA
+        </div>
+    </div>
+    
+    <div class="marquee-container-2">
+        <div class="marquee-reverse">
+            LSV LSV LSV LSV LSV LSV LSV LSV LSV LSV LSV LSV LSV LSV LSV
+        </div>
+    </div>
+
+    <div class="hero">
+        <div class="hero-content fade-in-up">
+            <h1 class="title">Mano</h1>
+            <p class="subtitle">Comunicación sin barreras, traductor en tiempo real de Lengua de Señas Venezolana (LSV).</p>
+        </div>
+        
+        <!-- Imagen del Robot / Elemento Tech flotante -->
+        <div class="hero-image-wrapper fade-in delay-2">
+            <img src="diseño/robot.png" alt="Robot Transparente" class="floating-robot">
+        </div>
+
+        <div class="scroll-indicator fade-in-up delay-2">
+            <span>Descubre más</span>
+            <div class="arrow"></div>
+        </div>
+    </div>
+
+    <section class="about section">
+        <div class="container fade-in-up">
+            <h2>¿Qué es Mano?</h2>
+            <div class="about-flex">
+                <p>Mano es una aplicación innovadora que facilita la comunicación traduciendo al instante la Lengua de Señas a texto y voz. Utilizamos tecnología de vanguardia en visión por computadora para interpretar de forma precisa los gestos y movimientos de tus manos en tiempo real, creando un puente entre personas sin importar las barreras auditivas o del habla.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="purpose section bg-alt">
+        <div class="container fade-in-up">
+            <h2>¿Para qué sirve?</h2>
+            <div class="grid">
+                <div class="card card-hover">
+                    <div class="card-icon"></div>
+                    <h3>Inclusión Total</h3>
+                    <p>Permite a las personas sordas o con dificultades del habla comunicarse de manera fluida y natural con aquellos que no dominan la lengua de señas.</p>
+                </div>
+                <div class="card card-hover">
+                    <div class="card-icon"></div>
+                    <h3>Traducción Inmediata</h3>
+                    <p>Reconocimiento de gestos y deletreo táctico a través de cualquier cámara, garantizando una interacción rápida en entornos cotidianos.</p>
+                </div>
+                <div class="card card-hover">
+                    <div class="card-icon"></div>
+                    <h3>Educación y Práctica</h3>
+                    <p>Funciona como una excelente plataforma para aprender, ensayar y fomentar el uso del lenguaje de señas mediante módulos interactivos de juegos y retos.</p>
+                </div>
+            </div>
+            
+            <div class="action-container fade-in-up" style="text-align: center; margin-top: 80px;">
+                <a href="index.html" class="btn">Probar Aplicación</a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-content fade-in">
+            <p>Hecha por <strong>mario toro</strong>, <strong>x mfast industry</strong> y <strong>starnetword</strong></p>
+        </div>
+    </footer>
+
+    <script>
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.15
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in-up, .fade-in, .card-hover').forEach((el) => {
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
